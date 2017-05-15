@@ -2,12 +2,31 @@ Rails.application.routes.draw do
  
 
   devise_for :users
-# get 'users/new'
+
   root 'festival#index'
-  get '/festival/day1'
-  get '/festival/index'
-  get '/festival/write'
-  get '/festival/eng'
+  
+  get '/index' => 'festival#index'
+  get '/day1' => 'festival#day1'
+  get '/festival/write' => 'festival#write'
+  get '/festival/sns'
+  get '/festival/eng'=> 'festival#eng'
+  get '/club/write' => 'club#club_write'
+  get '/club/edit' => 'club#club_edit'
+  post '/club/create' => 'club#club_create'
+  post '/club/update' => 'club#club_update'
+  get '/menuwrite/:univ_id/:club_id' => 'club#menu_write'
+  post '/menucreate' => 'club#menu_create'
+  
+  get '/sns/main' => 'sns#main'
+
+  post 'sns/create'
+
+  get 'sns/destroy'
+
+  get 'sns/edit'
+
+  post 'sns/update'
+  
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

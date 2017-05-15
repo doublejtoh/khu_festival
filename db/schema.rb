@@ -11,7 +11,42 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170513012121) do
+ActiveRecord::Schema.define(version: 20170515040748) do
+
+  create_table "barmenus", force: :cascade do |t|
+    t.string   "menu_name"
+    t.integer  "menu_price"
+    t.integer  "univ_id"
+    t.integer  "club_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "clubs", force: :cascade do |t|
+    t.integer  "univ_id"
+    t.integer  "day"
+    t.string   "major_name"
+    t.string   "club_name"
+    t.string   "bar_name"
+    t.integer  "bar_location"
+    t.string   "bar_feature"
+    t.string   "menu_name"
+    t.integer  "menu_price"
+    t.integer  "club_id"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
+
+  create_table "comments", force: :cascade do |t|
+    t.text     "comment"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "migrates", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "",    null: false

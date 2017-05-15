@@ -1,10 +1,10 @@
 class FestivalController < ApplicationController
-    before_action :authenticate, only: [:write]
+    before_action :authenticate, only: [:write, :sns]
     before_action :authenticate_admin, only: [:write]
-    
+  
+ 
     def day1
     
-        
         
     end
     
@@ -26,12 +26,12 @@ class FestivalController < ApplicationController
         
     end
     
-    def write
-        
-    end
+
             
             
     def eng # 공과대학
+    @clubs=Club.all
+    
     
     end
     
