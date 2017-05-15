@@ -5,8 +5,12 @@ Rails.application.routes.draw do
 
   root 'festival#index'
   
-  get '/index' => 'festival#index'
-  get '/day1' => 'festival#day1'
+  get '/festival/index' => 'festival#index'
+  get '/festival/day22' => 'festival#day22'
+  get '/festival/day23' => 'festival#day23'
+  get '/festival/day24' => 'festival#day24'
+  get '/festival/day25' => 'festival#day25'
+  get '/festival/day26' => 'festival#day26'
   get '/festival/write' => 'festival#write'
   get '/festival/sns'
   get '/festival/eng'=> 'festival#eng'
@@ -21,7 +25,8 @@ Rails.application.routes.draw do
 
   post 'sns/create'
 
-  get 'sns/destroy'
+  get '/sns/destroy/:comment_id' => 'sns#destroy'
+
 
   get 'sns/edit'
 

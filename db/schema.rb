@@ -25,20 +25,18 @@ ActiveRecord::Schema.define(version: 20170515040748) do
   create_table "clubs", force: :cascade do |t|
     t.integer  "univ_id"
     t.integer  "day"
-    t.string   "major_name"
+    t.string   "department_name"
     t.string   "club_name"
     t.string   "bar_name"
     t.integer  "bar_location"
     t.string   "bar_feature"
-    t.string   "menu_name"
-    t.integer  "menu_price"
-    t.integer  "club_id"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
   end
 
   create_table "comments", force: :cascade do |t|
     t.text     "comment"
+    t.integer  "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
